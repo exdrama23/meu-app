@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>parts car networking - Sua peça certa, direto da loja para você</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-white">
+    <!-- Header -->
+    <header class="gradient-bg shadow-2xl sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-red-600 p-2 rounded-lg">
+                        <i class="fas fa-car text-2xl text-white"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold text-white">PartsNetwork</h1>
+                        <p class="text-sm text-gray-300">Sua peça certa, direto da loja para você</p>
+                    </div>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="/Budweiser/pages/login_new.html"
+                        class="bg-transparent border border-white text-white px-6 py-2 rounded-lg hover:bg-white hover:text-gray-900 transition-all duration-300">
+                        Entrar
+                    </a>
+
+                    <a href="/Budweiser/pages/login_new.html"
+                        class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-all duration-300">
+                        Cadastrar Empresa
+                    </a>
+
+                    <button
+                        class="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-all duration-300 pulse-animation">
+                        <i class="fas fa-download mr-2"></i>Baixar App
+                    </button>
+                </div>
+
+                <button class="md:hidden text-white text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section - Problema & Solução -->
+    <section class="gradient-bg py-20">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <div class="mb-8">
+                        <span class="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                            PROBLEMA
+                        </span>
+                        <h2 class="text-4xl md:text-5xl font-bold mt-4 mb-6 leading-tight">
+                            Encontrar peças certas, com <span class="text-red-400">confiança</span> e <span
+                                class="text-blue-400">agilidade</span>, ainda é um desafio.
+                        </h2>
+                    </div>
+
+                    <div class="mb-8">
+                        <span class="bg-green-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                            SOLUÇÃO
+                        </span>
+                        <p class="text-xl mt-4 text-gray-300 leading-relaxed">
+                            Nosso app conecta <strong>oficinas</strong>, <strong>lojas</strong> e
+                            <strong>motoristas</strong> com um catálogo inteligente e intuitivo de peças automotivas.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button
+                            class="bg-red-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-red-700 transition-all duration-300 pulse-animation">
+                            <i class="fas fa-mobile-alt mr-2"></i>Baixe Agora
+                        </button>
+                        <button
+                            class="bg-transparent border-2 border-blue-500 text-blue-400 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-500 hover:text-white transition-all duration-300">
+                            <i class="fas fa-store mr-2"></i>Quero Vender Peças
+                        </button>
+                    </div>
+                </div>
+
+                <div class="floating">
+                    <div class="bg-gray-800 rounded-2xl p-8 shadow-2xl">
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <div class="bg-red-600 p-4 rounded-lg text-center">
+                                <i class="fas fa-cog text-3xl mb-2"></i>
+                                <p class="text-sm">Motor</p>
+                            </div>
+                            <div class="bg-blue-600 p-4 rounded-lg text-center">
+                                <i class="fas fa-car-battery text-3xl mb-2"></i>
+                                <p class="text-sm">Elétrica</p>
+                            </div>
+                            <div class="bg-green-600 p-4 rounded-lg text-center">
+                                <i class="fas fa-tools text-3xl mb-2"></i>
+                                <p class="text-sm">Freios</p>
+                            </div>
+                            <div class="bg-purple-600 p-4 rounded-lg text-center">
+                                <i class="fas fa-lightbulb text-3xl mb-2"></i>
+                                <p class="text-sm">Faróis</p>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-gray-400 text-sm">Milhares de peças disponíveis</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Funcionalidades para Empresas -->
+    <section class="bg-gray-800 py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <span class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                    PARA EMPRESAS
+                </span>
+                <h2 class="text-4xl font-bold mt-4 mb-6">Venda suas peças com facilidade</h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    Plataforma completa para gerenciar seu negócio, desde o cadastro até a entrega
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-900 p-8 rounded-2xl card-hover fade-in">
+                    <div class="bg-blue-600 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-store text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Perfil Completo</h3>
+                    <ul class="text-gray-400 space-y-2">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Logo e descrição</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Avaliações e notas</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Localização</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-900 p-8 rounded-2xl card-hover fade-in">
+                    <div class="bg-green-600 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-boxes text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Gestão de Estoque</h3>
+                    <ul class="text-gray-400 space-y-2">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Cadastro de peças</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Controle de estoque</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Fotos e descrições</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-900 p-8 rounded-2xl card-hover fade-in">
+                    <div class="bg-red-600 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Relatórios</h3>
+                    <ul class="text-gray-400 space-y-2">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Vendas detalhadas</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Peças mais buscadas</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Status de pedidos</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Funcionalidades para Clientes -->
+    <section class="bg-gray-900 py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <span class="bg-green-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                    PARA CLIENTES
+                </span>
+                <h2 class="text-4xl font-bold mt-4 mb-6">Encontre a peças,  materiais de construção e serviços perfeita</h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    Busca inteligente, filtros avançados e entrega rápida
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="space-y-8">
+                        <div class="flex items-start space-x-4">
+                            <div
+                                class="bg-blue-600 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Busca Inteligente</h3>
+                                <p class="text-gray-400">Filtros por empresas, categorias e preço </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div
+                                class="bg-green-600 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Empresas Próximas</h3>
+                                <p class="text-gray-400">Encontre lojas na sua região</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div
+                                class="bg-purple-600 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-truck"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Acompanhe Pedidos</h3>
+                                <p class="text-gray-400">Status em tempo real e histórico completo</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="floating">
+                    <div class="bg-gray-800 rounded-2xl p-6 shadow-2xl">
+                        <div class="bg-gray-700 rounded-lg p-4 mb-4">
+                            <div class="flex items-center justify-between mb-3">
+                                <h4 class="font-bold">Pastilha de Freio</h4>
+                                <span class="text-green-400 font-bold">R$ 89,90</span>
+                            </div>
+                            <p class="text-sm text-gray-400 mb-2">Compatível: Honda Civic 2019-2023</p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <span class="text-sm">4.8 (124)</span>
+                                </div>
+                                <a href="/Budweiser/pages/login_new.html"
+                                    class="bg-red-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-red-700 transition-all">
+                                    Adicionar
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-700 rounded-lg p-4">
+                            <div class="flex items-center justify-between mb-3">
+                                <h4 class="font-bold">Filtro de Óleo</h4>
+                                <span class="text-green-400 font-bold">R$ 24,90</span>
+                            </div>
+                            <p class="text-sm text-gray-400 mb-2">Compatível: Toyota Corolla 2020+</p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <span class="text-sm">4.9 (89)</span>
+                                </div>
+                                <a href="/Budweiser/pages/login_new.html"
+                                    class="bg-red-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-red-700 transition-all">
+                                    Adicionar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tela do App -->
+    <section class="bg-gray-800 py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <span class="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                    PRODUTOS
+                </span>
+                <h2 class="text-4xl font-bold mt-4 mb-6">Sistema inteligente de busca de itens</h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    categorias organizadas
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="bg-red-600 p-6 rounded-2xl text-center card-hover">
+                    <i class="fas fa-brake-disc text-4xl mb-4"></i>
+                    <h3 class="font-bold mb-2">Freios</h3>
+                    <p class="text-sm opacity-80">Pastilhas, discos, fluidos</p>
+                </div>
+
+                <div class="bg-blue-600 p-6 rounded-2xl text-center card-hover">
+                    <i class="fas fa-cog text-4xl mb-4"></i>
+                    <h3 class="font-bold mb-2">Motor</h3>
+                    <p class="text-sm opacity-80">Filtros, óleos, velas</p>
+                </div>
+
+                <div class="bg-green-600 p-6 rounded-2xl text-center card-hover">
+                    <i class="fas fa-car-battery text-4xl mb-4"></i>
+                    <h3 class="font-bold mb-2">Elétrica</h3>
+                    <p class="text-sm opacity-80">Baterias, alternadores</p>
+                </div>
+
+                <div class="bg-purple-600 p-6 rounded-2xl text-center card-hover">
+                    <i class="fas fa-lightbulb text-4xl mb-4"></i>
+                    <h3 class="font-bold mb-2">Iluminação</h3>
+                    <p class="text-sm opacity-80">Faróis, lâmpadas, LEDs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Monetização -->
+    <section class="gradient-bg py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <span class="bg-yellow-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                    🪙 MONETIZAÇÃO
+                </span>
+                <h2 class="text-4xl font-bold mt-4 mb-6">Modelo de negócio escalável</h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    Receita por comissão e assinaturas, com parcerias estratégicas
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-800 p-8 rounded-2xl text-center card-hover">
+                    <div class="bg-green-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-percentage text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Comissão por Venda</h3>
+                    <p class="text-gray-400">Taxa sobre cada transação realizada na plataforma</p>
+                </div>
+
+                <div class="bg-gray-800 p-8 rounded-2xl text-center card-hover">
+                    <div class="bg-blue-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-crown text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Planos Premium</h3>
+                    <p class="text-gray-400">Assinaturas mensais com recursos avançados</p>
+                </div>
+
+                <div class="bg-gray-800 p-8 rounded-2xl text-center card-hover">
+                    <div class="bg-red-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-handshake text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Parcerias</h3>
+                    <p class="text-gray-400">Integração com grandes redes e oficinas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="bg-gray-900 py-20">
+        <div class="container mx-auto px-6 text-center">
+            <div class="fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    Pronto para revolucionar o mercado de <span class="text-red-400">peças automotivas</span>?
+                </h2>
+                <p class="text-xl text-gray-400 mb-12 max-w-3xl mx-auto">
+                    Junte-se à nossa plataforma e faça parte da transformação digital do setor automotivo
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                    <button  onclick="window.location.href='cadastro_empresa.html'"
+                        class="bg-red-600 text-white px-12 py-4 rounded-lg text-xl font-bold hover:bg-red-700 transition-all duration-300 pulse-animation">
+                        <i class="fas fa-mobile-alt mr-3"></i>Baixe Agora
+                    </button>
+                    <button
+                        class="bg-blue-600 text-white px-12 py-4 rounded-lg text-xl font-bold hover:bg-blue-700 transition-all duration-300">
+                        <i class="fas fa-store mr-3"></i>Quero Vender Peças
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="bg-red-600 p-2 rounded-lg">
+                            <i class="fas fa-car text-xl text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">PartsNetwork</h3>
+                            <p class="text-sm text-gray-400">Sua peça certa</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        Conectando o mercado automotivo com tecnologia e inovação.
+                        E ao mercado de construção civil, com peças de qualidade e entrega rápida.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-pink-600 p-3 rounded-lg hover:bg-pink-700 transition-all">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="bg-blue-800 p-3 rounded-lg hover:bg-blue-900 transition-all">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Empresa</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-all">Sobre nós</a></li>
+                        <li><a href="#" class="hover:text-white transition-all">Carreiras</a></li>
+                        <li><a href="#" class="hover:text-white transition-all">Imprensa</a></li>
+                        <li><a href="#" class="hover:text-white transition-all">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Suporte</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-all">Central de Ajuda</a></li>
+                        <li><a href="#" class="hover:text-white transition-all">Contato</a></li>
+                        <li><a href="#" class="hover:text-white transition-all">Termos de Uso</a></li>
+                        <li><a href="#" class="hover:text-white transition-all">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Contato</h4>
+                    <div class="space-y-3 text-gray-400">
+                        <p class="flex items-center"><i class="fas fa-envelope mr-2"></i>PartsNetworkSuport@gmail.com
+                        </p>
+                        <p><i class="fas fa-phone mr-2 "></i>(+55) 79 99911-3824</p>
+                        <p><i class="fas fa-map-marker-alt mr-2"></i>Sergipe, SE</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 AutoParts. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Animação de fade-in ao scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = '0.2s';
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observar todos os elementos que devem ter animação
+        document.querySelectorAll('.card-hover, .fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Funcionalidade dos botões
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', function () {
+                const buttonText = this.textContent.trim();
+
+                if (buttonText.includes('Baixar') || buttonText.includes('Baixe')) {
+                    ('Voçê sera levado para o download do app!');
+                } else if (buttonText.includes('Empresa') || buttonText.includes('Vender')) {
+                    alert(' Cadastro de empresas em desenvolvimento. Entre em contato conosco!');
+                } else if (buttonText.includes('Entrar')) {
+                    alert(' Sistema de login em desenvolvimento.');
+                } else if (buttonText.includes('Explorar')) {
+                    alert(' Catálogo completo em breve!');
+                } else if (buttonText.includes('Adicionar')) {
+                    this.textContent = '✓ Adicionado';
+                    this.classList.add('bg-green-600');
+                    setTimeout(() => {
+                        this.textContent = 'Adicionar';
+                        this.classList.remove('bg-green-600');
+                    }, 2000);
+                }
+            });
+        });
+    </script>
+    <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'96404b4f36d6f626',t:'MTc1MzMyNzM1Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+</body>
+
+</html>
